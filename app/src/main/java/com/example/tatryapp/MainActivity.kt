@@ -33,7 +33,6 @@ class MainActivity : ComponentActivity() {
             }
 
         }
-
         setContent {
             Column (
                 modifier = Modifier.fillMaxSize(),

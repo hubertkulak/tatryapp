@@ -16,10 +16,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.tatryapp.ui.theme.TatryappTheme
 
-class Doliny : ComponentActivity() {
+class Siklawa : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -28,14 +27,8 @@ class Doliny : ComponentActivity() {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                Button(onClick = {
-                    val navigate = Intent(this@Doliny, MainActivity::class.java)
-                    startActivity(navigate)
-                }) {
-                    Text(text = "Home Screen", fontSize = 18.sp)
-                }
+                Text(text ="Siklawa", fontSize = 30.sp )
             }
         }
     }
 }
-

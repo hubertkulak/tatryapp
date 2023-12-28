@@ -25,7 +25,7 @@ class TatryZachodnie : ComponentActivity() {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                Text(text ="Tatry Wysokie", fontSize = 30.sp )
+                Text(text ="Tatry Zachodnie", fontSize = 30.sp )
             }
         }
     }
