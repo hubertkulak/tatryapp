@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="Theme.Tatry.MySplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenAnimationDuration">3000</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/avd_anim_w</item>
+        <item name="postSplashScreenTheme">@style/Theme.Tatryapp</item>
+    </style>
+    
+</resources>
