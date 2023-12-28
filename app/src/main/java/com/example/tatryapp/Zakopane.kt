@@ -1,11 +1,13 @@
 package com.example.tatryapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -24,8 +26,13 @@ class Zakopane : ComponentActivity() {
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
-            ){
-                Text(text ="Atrakcje Zakopanego", fontSize = 30.sp )
+            ) {
+                Button(onClick = {
+                    val navigate = Intent(this@Zakopane, Siklawa::class.java)
+                    startActivity(navigate)
+                }) {
+                    Text(text = "Siklawa", fontSize = 18.sp)
+                }
             }
         }
     }

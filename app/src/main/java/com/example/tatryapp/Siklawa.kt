@@ -26,8 +26,13 @@ class Siklawa : ComponentActivity() {
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
-            ){
-                Text(text ="Siklawa", fontSize = 30.sp )
+            ) {
+                Button(onClick = {
+                    val navigate = Intent(this@Siklawa, Siklawa::class.java)
+                    startActivity(navigate)
+                }) {
+                    Text(text = "Siklawa", fontSize = 18.sp)
+                }
             }
         }
     }
