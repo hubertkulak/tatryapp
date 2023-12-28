@@ -46,6 +46,24 @@ class MainActivity : ComponentActivity() {
                 }) {
                     Text(text = "Tatry Wysokie", fontSize = 18.sp)
                 }
+                Button(onClick = {
+                    val navigate = Intent(this@MainActivity, TatryZachodnie::class.java)
+                    startActivity(navigate)
+                }) {
+                    Text(text = "Tatry Zachodnie", fontSize = 18.sp)
+                }
+                Button(onClick = {
+                    val navigate = Intent(this@MainActivity, Doliny::class.java)
+                    startActivity(navigate)
+                }) {
+                    Text(text = "Doliny", fontSize = 18.sp)
+                }
+                Button(onClick = {
+                    val navigate = Intent(this@MainActivity, Zakopane::class.java)
+                    startActivity(navigate)
+                }) {
+                    Text(text = "Atrakcje Zakopanego", fontSize = 18.sp)
+                }
 
             }
         }

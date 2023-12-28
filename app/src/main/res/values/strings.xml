@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">tatryapp</string>
     <string name="title_activity_tatry_wysokie">TatryWysokie</string>
+    <string name="title_activity_tatry_zachodnie">TatryZachodnie</string>
+    <string name="title_activity_doliny">Doliny</string>
+    <string name="title_activity_zakopane">Zakopane</string>
 </resources>
