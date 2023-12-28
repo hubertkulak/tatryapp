@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Tatry.MySplash"
         tools:targetApi="31">
         <activity
+            android:name=".TatryWysokie"
+            android:exported="false"
+            android:label="@string/title_activity_tatry_wysokie"
+            android:theme="@style/Theme.Tatry.MySplash" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
