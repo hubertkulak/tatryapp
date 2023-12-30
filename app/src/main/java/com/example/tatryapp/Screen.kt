@@ -5,4 +5,7 @@ sealed class Screen(val route: String) {
     object TatryWysokie : Screen("tatrywysokie")
 
     object TatryZachodnie : Screen("tatryzachodnie")
+
+    object Doliny : Screen("doliny")
+    object Ulubione : Screen("ulubione")
 }

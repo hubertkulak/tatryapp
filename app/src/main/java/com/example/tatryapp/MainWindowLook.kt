@@ -57,9 +57,9 @@ fun MainScreenLook(navController: NavController) {
 
             }
             Column {
-                Buttons(navController,"mountains", "Ulubione", "Zakopane")
+                Buttons(navController,"mountains", "Doliny", "Doliny")
 
-                Buttons(navController,"mountains", "Informacje GOPR", "Doliny")
+                Buttons(navController,"mountains", "Ulubione", "Ulubione")
 
 
             }
@@ -82,7 +82,7 @@ fun MainScreenLook(navController: NavController) {
         Button(modifier = Modifier.padding(10.dp).height(100.dp).width(170.dp),
             colors = ButtonDefaults.buttonColors(containerColor =  Color.White),
             onClick = {
-                navController.navigate(Screen.TatryZachodnie.route)
+                navController.navigate(Screen.Ulubione.route)
                 })
         {
             Column(
@@ -106,7 +106,6 @@ fun MainScreenLook(navController: NavController) {
                     modifier = Modifier.padding(5.dp)
                 )
             }
-
 
         }
     }
