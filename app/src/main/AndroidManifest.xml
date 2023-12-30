@@ -41,7 +41,27 @@
             android:name=".TatryWysokie"
             android:exported="false"
             android:label="@string/title_activity_tatry_wysokie"
-            android:theme="@style/Theme.Tatry.MySplash" />
+            android:theme="@style/Theme.Tatryapp" />
+        <activity
+            android:name=".Doliny"
+            android:exported="false"
+            android:label="@string/title_activity_doliny"
+            android:theme="@style/Theme.Tatryapp" />
+        <activity
+            android:name=".TatryZachodnie"
+            android:exported="false"
+            android:label="@string/title_activity_tatry_zachodnie"
+            android:theme="@style/Theme.Tatryapp" />
+        <activity
+            android:name=".Zakopane"
+            android:exported="false"
+            android:label="@string/title_activity_zakopane"
+            android:theme="@style/Theme.Tatryapp" />
+        <activity
+            android:name=".Siklawa"
+            android:exported="false"
+            android:label="@string/title_activity_siklawa"
+            android:theme="@style/Theme.Tatryapp" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -28,10 +28,10 @@ class Siklawa : ComponentActivity() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Button(onClick = {
-                    val navigate = Intent(this@Siklawa, Siklawa::class.java)
+                    val navigate = Intent(this@Siklawa, Zakopane::class.java)
                     startActivity(navigate)
                 }) {
-                    Text(text = "Siklawa", fontSize = 18.sp)
+                    Text(text = "Doliny", fontSize = 18.sp)
                 }
             }
         }
