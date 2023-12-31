@@ -82,8 +82,17 @@ fun MainScreenLook(navController: NavController) {
         Button(modifier = Modifier.padding(10.dp).height(100.dp).width(170.dp),
             colors = ButtonDefaults.buttonColors(containerColor =  Color.White),
             onClick = {
-                navController.navigate(Screen.Ulubione.route)
-                })
+                if(destination=="TatryWysokie") {
+                    navController.navigate(Screen.TatryWysokie.route)
+                }else if(destination=="TatryZachodnie"){
+                    navController.navigate(Screen.TatryZachodnie.route)
+                }else if(destination=="Doliny"){
+                    navController.navigate(Screen.Doliny.route)
+                }else if(destination=="Ulubione"){
+                    navController.navigate(Screen.Ulubione.route)
+                }
+
+            })
         {
             Column(
                 modifier = Modifier.padding(5.dp),
