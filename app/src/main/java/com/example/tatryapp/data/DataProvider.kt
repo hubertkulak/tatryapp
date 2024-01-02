@@ -11,7 +11,9 @@ object DataProvider {
             distance = 14,
             time = 60,
             description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
-            mountainImageId = R.drawable.m1
+            mountainImageId = R.drawable.m1,
+            latitude = 49.1880,
+            longitude = 20.0911
     )
 
     val mountainList = listOf(
@@ -23,7 +25,9 @@ object DataProvider {
             distance = 14,
             time = 60,
             description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
-            mountainImageId = R.drawable.m2
+            mountainImageId = R.drawable.m2,
+            latitude = 49.1880,
+            longitude = 20.0911
         ),
         Mountains(
             id = 3,
@@ -32,7 +36,9 @@ object DataProvider {
             distance = 14,
             time = 60,
             description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
-            mountainImageId = R.drawable.m3
+            mountainImageId = R.drawable.m3,
+            latitude = 49.1880,
+            longitude = 20.0911
         ),
         Mountains(
             id = 4,
@@ -41,7 +47,9 @@ object DataProvider {
             distance = 14,
             time = 60,
             description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
-            mountainImageId = R.drawable.m4
+            mountainImageId = R.drawable.m4,
+            latitude = 49.1880,
+            longitude = 20.0911
         ),
         Mountains(
             id = 5,
@@ -50,8 +58,9 @@ object DataProvider {
             distance = 14,
             time = 60,
             description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
-            mountainImageId = R.drawable.m5
+            mountainImageId = R.drawable.m5,
+            latitude = 49.1880,
+            longitude = 20.0911
         ),
-
     )
 }

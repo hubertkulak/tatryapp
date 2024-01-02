@@ -1,6 +1,7 @@
 package com.example.tatryapp
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -25,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.example.tatryapp.data.Mountains
 
 @Composable
-fun MountainListItem(mountains: Mountains){
+fun MountainListItem(mountains: Mountains, onClick: (Mountains) -> Unit){
     Card (
         modifier = Modifier
             .padding(horizontal = 8.dp, vertical = 8.dp)
@@ -37,6 +38,7 @@ fun MountainListItem(mountains: Mountains){
             MountainImage(mountains)
             Column (
                 modifier = Modifier
+                    .clickable { onClick(mountains) }
                     .padding(16.dp)
                     .fillMaxWidth()
                     .align(Alignment.CenterVertically)

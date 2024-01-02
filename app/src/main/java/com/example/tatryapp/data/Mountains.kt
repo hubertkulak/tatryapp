@@ -7,5 +7,7 @@ data class Mountains (
         val distance: Int,
         val time: Int,
         val description: String,
-        val mountainImageId: Int = 0
+        val mountainImageId: Int = 0,
+        val latitude : Double,
+        val longitude : Double
 )
