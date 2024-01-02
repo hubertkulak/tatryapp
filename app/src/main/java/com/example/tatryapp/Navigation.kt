@@ -5,6 +5,7 @@ import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.tatryapp.data.Mountains
 
 @Composable
 fun Navigation(){

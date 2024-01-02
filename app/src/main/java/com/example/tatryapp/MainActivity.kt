@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.tatryapp.ui.theme.TatryappTheme
+import com.example.tatryapp.data.Mountains as Mountains
 
 class MainActivity : ComponentActivity() {
 
