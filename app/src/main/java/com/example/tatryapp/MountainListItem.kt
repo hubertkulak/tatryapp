@@ -62,3 +62,29 @@ private fun MountainImage(mountains: Mountains) {
             .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
     )
 }
+
+@Composable
+fun MountainListItemZach(mountainsZach: Mountains, onClick: (Mountains) -> Unit){
+    Card (
+        modifier = Modifier
+            .padding(horizontal = 8.dp, vertical = 8.dp)
+            .fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = Color.LightGray),
+        shape = RoundedCornerShape(corner = CornerSize(16.dp))
+    ) {
+        Row{
+            MountainImage(mountainsZach)
+            Column (
+                modifier = Modifier
+                    .clickable { onClick(mountainsZach) }
+                    .padding(16.dp)
+                    .fillMaxWidth()
+                    .align(Alignment.CenterVertically)
+            ){
+                Text(text = mountainsZach.name, style = typography.bodyLarge)
+                Text(text = "VIEW DETAIL", style = typography.bodyMedium)
+            }
+        }
+    }
+}
+

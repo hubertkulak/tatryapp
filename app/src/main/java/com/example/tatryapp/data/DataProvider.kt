@@ -68,4 +68,73 @@ object DataProvider {
             elevation = 1000
         ),
     )
+
+
+
+
+    val mountainsZach =
+        Mountains(
+            id = 1,
+            name = "Zachodnie",
+            difficulty = 5,
+            distance = 14,
+            time = 60,
+            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
+            mountainImageId = R.drawable.m1,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        )
+
+    val mountainListZach = listOf(
+        mountainsZach,
+        Mountains(
+            id = 2,
+            name = "ZachodniaGora",
+            difficulty = 1,
+            distance = 2,
+            time = 3,
+            description = "Jestem pelna piekna i dobra.",
+            mountainImageId = R.drawable.m2,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+        Mountains(
+            id = 3,
+            name = "Zachodniatrzecia",
+            difficulty = 4,
+            distance = 5,
+            time = 6,
+            description = "Trzecia gora tatr zachodnich.",
+            mountainImageId = R.drawable.m3,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+        Mountains(
+            id = 4,
+            name = "Zachodnia czwrta",
+            difficulty = 5,
+            distance = 14,
+            time = 60,
+            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
+            mountainImageId = R.drawable.m4,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+        Mountains(
+            id = 5,
+            name = "PiataGora",
+            difficulty = 5,
+            distance = 14,
+            time = 60,
+            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
+            mountainImageId = R.drawable.m5,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+    )
 }
