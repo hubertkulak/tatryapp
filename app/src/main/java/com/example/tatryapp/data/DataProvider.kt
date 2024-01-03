@@ -141,7 +141,7 @@ object DataProvider {
     val mountainsDoliny =
         Mountains(
             id = 1,
-            name = "Dolina Kościeliska",
+            name = "Kocham Cię Marysiu",
             difficulty = 1,
             distance = 20,
             time = 120,
@@ -156,7 +156,7 @@ object DataProvider {
         mountainsDoliny,
         Mountains(
             id = 2,
-            name = "Dolina Piękności",
+            name = "Kocham Cię Marysiu",
             difficulty = 1,
             distance = 2,
             time = 3,
@@ -168,7 +168,7 @@ object DataProvider {
         ),
         Mountains(
             id = 3,
-            name = "Dolina Mądrości",
+            name = "Kocham Cię Marysiu",
             difficulty = 4,
             distance = 5,
             time = 6,
@@ -180,7 +180,7 @@ object DataProvider {
         ),
         Mountains(
             id = 4,
-            name = "Przełęcz nieumarłych",
+            name = "Kocham Cię Marysiu",
             difficulty = 5,
             distance = 14,
             time = 60,
@@ -192,7 +192,7 @@ object DataProvider {
         ),
         Mountains(
             id = 5,
-            name = "Przęłęcz utrapionych",
+            name = "Kocham Cię Marysiu",
             difficulty = 5,
             distance = 14,
             time = 60,
@@ -204,7 +204,7 @@ object DataProvider {
         ),
         Mountains(
             id = 6,
-            name = "Dolina Zagłady",
+            name = "Kocham Cię Marysiu",
             difficulty = 1,
             distance = 2,
             time = 3,
@@ -216,7 +216,7 @@ object DataProvider {
         ),
         Mountains(
             id = 7,
-            name = "Przepaść mordoru",
+            name = "Kocham Cię Marysiu",
             difficulty = 4,
             distance = 5,
             time = 6,
@@ -228,7 +228,7 @@ object DataProvider {
         ),
         Mountains(
             id = 8,
-            name = "Śmiech konających chien",
+            name = "Kocham Cię Marysiu",
             difficulty = 5,
             distance = 14,
             time = 60,
@@ -240,7 +240,7 @@ object DataProvider {
         ),
         Mountains(
             id = 9,
-            name = "No to grubo",
+            name = "Kocham Cię Marysiu",
             difficulty = 5,
             distance = 14,
             time = 60,
