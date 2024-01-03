@@ -9,5 +9,6 @@ data class Mountains (
         val description: String,
         val mountainImageId: Int = 0,
         val latitude : Double,
-        val longitude : Double
+        val longitude : Double,
+        val elevation : Int
 )

@@ -5,4 +5,7 @@
     <string name="title_activity_tatry_zachodnie">Tatry Zachodnie\n</string>
     <string name="title_activity_zakopane">Zakopane\n</string>
     <string name="title_activity_siklawa">Siklawa\n</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="distance">Distance</string>
+    <string name="elevation">Elevation</string>
 </resources>
