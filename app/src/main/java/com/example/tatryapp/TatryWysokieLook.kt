@@ -24,6 +24,7 @@ import com.example.tatryapp.data.Mountains
 fun TatryWysokieLook(navController: NavController)
 {
     val mount = remember { DataProvider.mountainList}
+
     LazyColumn(
         modifier = Modifier.background(color = Color.Black),
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)

@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -80,7 +81,7 @@ fun WeatherForecastScreen(latitude: Double, longitude: Double) {
 @Composable
 fun WeatherForecastList(weatherList: List<WeatherInfo>) {
     // Wyświetl listę prognozy pogody
-    LazyColumn {
+    LazyRow {
         items(weatherList) { weatherInfo ->
             WeatherItem(weatherInfo)
         }
@@ -101,10 +102,10 @@ fun WeatherItem(weatherInfo: WeatherInfo) {
         elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp
         ),
-        colors = CardDefaults.cardColors(containerColor = Color.Gray)
+        colors = CardDefaults.cardColors(containerColor = Color.White)
     ) {
-        Text(text = "Time: ${weatherInfo.dt_txt}")
-        Text(text = "Temperature: ${weatherInfo.main.temp}°C")
-        Text(text = "Description: ${weatherInfo.weather.firstOrNull()?.description ?: ""}")
+        Text(modifier = Modifier.padding(5.dp),text = "Czas: ${weatherInfo.dt_txt}")
+        Text(modifier = Modifier.padding(5.dp),text = "Temperatura: ${weatherInfo.main.temp}°C")
+        Text(modifier = Modifier.padding(5.dp),text = "Warunki: ${weatherInfo.weather.firstOrNull()?.description ?: ""}")
     }
 }

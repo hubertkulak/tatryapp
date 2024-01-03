@@ -45,6 +45,32 @@ fun Navigation(){
                 Text(text = "Brak informacji o tej górze")
             }
         }
+
+        composable(
+            route = "mountainDetailZach/{mountainZachId}",
+            arguments = listOf(navArgument("mountainZachId") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val mountainZachId = backStackEntry.arguments?.getInt("mountainZachId")
+            if (mountainZachId != null) {
+                MountainDetailScreenZach(navController = navController, mountainZachId = mountainZachId)
+            } else {
+                Text(text = "Brak informacji o tej górze")
+            }
+        }
+
+        composable(
+            route = "mountainDetailDoliny/{mountainDolinyId}",
+            arguments = listOf(navArgument("mountainDolinyId") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val mountainDolinyId = backStackEntry.arguments?.getInt("mountainDolinyId")
+            if (mountainDolinyId != null) {
+                MountainDetailScreenDoliny(navController = navController, mountainDolinyId = mountainDolinyId)
+            } else {
+                Text(text = "Brak informacji o tej górze")
+            }
+        }
+
+
     }
 }
 

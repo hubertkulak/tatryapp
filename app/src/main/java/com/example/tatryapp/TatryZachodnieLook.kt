@@ -30,7 +30,7 @@ fun TatryZachodnieLook(navController: NavController)
             items = mount,
             itemContent = {
                 MountainListItemZach(mountainsZach = it,
-                    onClick = {selectedMountain -> navController.navigate("mountainDetail/${selectedMountain.id}")})
+                    onClick = {selectedMountain -> navController.navigate("mountainDetailZach/${selectedMountain.id}")})
             })
     }
 }

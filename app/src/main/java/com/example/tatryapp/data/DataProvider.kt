@@ -118,7 +118,7 @@ object DataProvider {
             difficulty = 5,
             distance = 14,
             time = 60,
-            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
+            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.",
             mountainImageId = R.drawable.m4,
             latitude = 49.1880,
             longitude = 20.0911,
@@ -127,6 +127,120 @@ object DataProvider {
         Mountains(
             id = 5,
             name = "PiataGora",
+            difficulty = 5,
+            distance = 14,
+            time = 60,
+            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
+            mountainImageId = R.drawable.m5,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+    )
+
+    val mountainsDoliny =
+        Mountains(
+            id = 1,
+            name = "Dolina Kościeliska",
+            difficulty = 1,
+            distance = 20,
+            time = 120,
+            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
+            mountainImageId = R.drawable.m1,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 100
+        )
+
+    val mountainListDoliny = listOf(
+        mountainsDoliny,
+        Mountains(
+            id = 2,
+            name = "Dolina Piękności",
+            difficulty = 1,
+            distance = 2,
+            time = 3,
+            description = "Jestem pelna piekna i dobra dolina taka fajna.",
+            mountainImageId = R.drawable.m2,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+        Mountains(
+            id = 3,
+            name = "Dolina Mądrości",
+            difficulty = 4,
+            distance = 5,
+            time = 6,
+            description = "Trzecia gora tatr zachodnich.",
+            mountainImageId = R.drawable.m3,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+        Mountains(
+            id = 4,
+            name = "Przełęcz nieumarłych",
+            difficulty = 5,
+            distance = 14,
+            time = 60,
+            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.",
+            mountainImageId = R.drawable.m4,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 100
+        ),
+        Mountains(
+            id = 5,
+            name = "Przęłęcz utrapionych",
+            difficulty = 5,
+            distance = 14,
+            time = 60,
+            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.",
+            mountainImageId = R.drawable.m5,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+        Mountains(
+            id = 6,
+            name = "Dolina Zagłady",
+            difficulty = 1,
+            distance = 2,
+            time = 3,
+            description = "Jestem pelna piekna i dobra dolina taka fajna.",
+            mountainImageId = R.drawable.m2,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+        Mountains(
+            id = 7,
+            name = "Przepaść mordoru",
+            difficulty = 4,
+            distance = 5,
+            time = 6,
+            description = "Trzecia gora tatr zachodnich.",
+            mountainImageId = R.drawable.m3,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 1000
+        ),
+        Mountains(
+            id = 8,
+            name = "Śmiech konających chien",
+            difficulty = 5,
+            distance = 14,
+            time = 60,
+            description = "Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.Monty enjoys chicken treats and cuddling while watching Seinfeld.",
+            mountainImageId = R.drawable.m4,
+            latitude = 49.1880,
+            longitude = 20.0911,
+            elevation = 100
+        ),
+        Mountains(
+            id = 9,
+            name = "No to grubo",
             difficulty = 5,
             distance = 14,
             time = 60,

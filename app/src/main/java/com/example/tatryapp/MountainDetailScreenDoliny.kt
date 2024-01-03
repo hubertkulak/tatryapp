@@ -34,8 +34,8 @@ import com.example.tatryapp.data.Mountains
 import com.example.tatryapp.weather.WeatherForecastScreen
 
 @Composable
-fun MountainDetailScreen(navController: NavController, mountainId: Int) {
-    val mountain = DataProvider.mountainList.firstOrNull { it.id == mountainId }
+fun MountainDetailScreenDoliny(navController: NavController, mountainDolinyId: Int) {
+    val mountain = DataProvider.mountainListDoliny.firstOrNull { it.id == mountainDolinyId }
     val scrollState = rememberScrollState()
     if (mountain != null) {
 

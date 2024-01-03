@@ -57,7 +57,7 @@ fun MainScreenLook(navController: NavController) {
 
             }
             Column {
-                Buttons(navController,"mountains", "Doliny", "Doliny")
+                Buttons(navController,"mountains", "Doliny i przełęcze", "Doliny")
 
                 Buttons(navController,"mountains", "Ulubione", "Ulubione")
 
