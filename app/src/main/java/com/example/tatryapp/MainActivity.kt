@@ -6,11 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
-import com.example.tatryapp.data.Mountains as Mountains
-
 class MainActivity : ComponentActivity() {
 
     private val viewModel by viewModels<MainViewModel>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +22,10 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
+
             Navigation()
 
         }
     }
 }
+
