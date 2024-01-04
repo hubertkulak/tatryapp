@@ -69,6 +69,9 @@ fun MainScreenLook(navController: NavController) {
             item {
                 Buttons(navController, R.drawable.halagasienicowa, "Ulubione", "Ulubione")
             }
+            item {
+                Buttons(navController, R.drawable.zachodnie, "Zdobyte", "Zdobyte")
+            }
         }
     }
 }
@@ -87,6 +90,7 @@ fun Buttons(navController: NavController, imageId: Int, opis: String, destinatio
                     "TatryZachodnie" -> navController.navigate(Screen.TatryZachodnie.route)
                     "Doliny" -> navController.navigate(Screen.Doliny.route)
                     "Ulubione" -> navController.navigate(Screen.Ulubione.route)
+                    "Zdobyte" -> navController.navigate(Screen.Zdobyte.route)
                 }
             },
     ) {

@@ -44,7 +44,7 @@ fun MountainListItem(mountains: Mountains, onClick: (Mountains) -> Unit){
                     .align(Alignment.CenterVertically)
             ){
                 Text(text = mountains.name, style = typography.bodyLarge)
-                Text(text = "VIEW DETAIL", style = typography.bodyMedium)
+                Text(text = "Dowiedz się więcej", style = typography.bodySmall)
             }
         }
     }
@@ -82,7 +82,7 @@ fun MountainListItemZach(mountainsZach: Mountains, onClick: (Mountains) -> Unit)
                     .align(Alignment.CenterVertically)
             ){
                 Text(text = mountainsZach.name, style = typography.bodyLarge)
-                Text(text = "VIEW DETAIL", style = typography.bodyMedium)
+                Text(text = "Dowiedz się więcej", style = typography.bodySmall)
             }
         }
     }

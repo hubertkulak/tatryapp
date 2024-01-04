@@ -33,6 +33,9 @@ fun Navigation(){
         composable(route = Screen.Ulubione.route){
             UlubioneLook(navController = navController)
         }
+        composable(route = Screen.Zdobyte.route){
+            ZdobyteLook(navController = navController)
+        }
 
         composable(
             route = "mountainDetail/{mountainId}",
