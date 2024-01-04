@@ -85,7 +85,7 @@ fun Description (mountain : Mountains, containerHeight: Dp)
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
             text = mountain.description,
-            style = MaterialTheme.typography.bodySmall,
+            style = MaterialTheme.typography.bodyMedium,
             color = Color.White
         )
     }
@@ -101,13 +101,17 @@ fun ProfileContent(mountain: Mountains, containerHeight: Dp) {
             .padding(top = 8.dp, bottom = 16.dp)
         ){
 
-            ProfileProperty(label = stringResource(id = R.string.difficulty), value = mountain.difficulty.toString())
+            ProfileProperty(label = stringResource(id = R.string.time), value = mountain.time)
             Spacer(modifier = Modifier.width(26.dp))
-            ProfileProperty(label = stringResource(id = R.string.distance), value = mountain.distance.toString())
+            ProfileProperty(label = stringResource(id = R.string.distance), value = mountain.distance)
             Spacer(modifier = Modifier.width(26.dp))
-            ProfileProperty(label = stringResource(id = R.string.elevation), value = mountain.elevation.toString())
+            ProfileProperty(label = stringResource(id = R.string.elevation), value = mountain.elevation)
         }
-        Divider(modifier = Modifier.padding(bottom = 4.dp))
+        Divider(modifier = Modifier.padding(bottom = 16.dp))
+        Spacer(modifier = Modifier.padding(bottom = 16.dp))
+        ProfileProperty(label = stringResource(id = R.string.route), value = mountain.route)
+        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(20.dp))
     }
 }
 
@@ -117,13 +121,14 @@ private fun Title(mountain: Mountains)
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
             text = mountain.name,
-            style = MaterialTheme.typography.headlineLarge,
+            style = MaterialTheme.typography.displayMedium,
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
         Divider(modifier = Modifier.padding(top = 12.dp))
     }
 }
+
 
 @Composable
 fun ProfileProperty(label: String, value: String) {
@@ -132,13 +137,13 @@ fun ProfileProperty(label: String, value: String) {
         Text(
             text = label,
             modifier = Modifier.height(24.dp),
-            style = MaterialTheme.typography.titleSmall,
+            style = MaterialTheme.typography.titleMedium,
             color = Color.White
         )
         Text(
             text = value,
             modifier = Modifier.height(24.dp),
-            style = MaterialTheme.typography.bodySmall,
+            style = MaterialTheme.typography.bodyMedium,
             color = Color.White,
             overflow = TextOverflow.Visible
         )

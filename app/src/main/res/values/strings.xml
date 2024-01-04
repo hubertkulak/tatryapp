@@ -8,4 +8,6 @@
     <string name="difficulty">Difficulty</string>
     <string name="distance">Distance</string>
     <string name="elevation">Elevation</string>
+    <string name="time">Time</string>
+    <string name="route">Route</string>
 </resources>
