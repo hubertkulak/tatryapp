@@ -294,7 +294,7 @@ object DataProvider {
             distance = "0.3 km",
             time = "15 min",
             description = "Jaskinia w Dolinie Kościeliskiej w Tatrach. Wraz z Jaskinią Mylną i Jaskinią Obłazkową stanowi system Jaskiń Pawlikowskiego. Ścieżka prowadząca do niej jest w odległości 4,4 km od Kir, 100 m powyżej Skały Pisanej, w Raptawickiej Turni, po zachodniej stronie doliny. Otwór jaskini, położony ok. 180 m powyżej koryta Kościeliskiego Potoku (1146 m n.p.m.), widoczny jest z drogi prowadzącej dnem doliny. Jaskinię można zwiedzać samodzielnie, bez przewodnika. Wewnątrz panuje niska temperatura. Główny wejściowy otwór ma średnicę ok. 3 m. Prowadzi od niego zejście pionowym 4-metrowym progiem po stalowej drabinie do głównej komory. Jest to pojedyncza, duża sala o wysokości 10–15 m i rozmiarach 10 × 40 m. W jej stropie znajdują się otwory dwóch małych studzienek. Od sali prowadzi kilka bocznych korytarzy.",
-            mountainImageId = R.drawable.koscielec,
+            mountainImageId = R.drawable.jaskiniaraptawicka,
             latitude = 49.1423,
             longitude = 19.5144,
             elevation = "75 m",

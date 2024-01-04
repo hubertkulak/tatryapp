@@ -52,22 +52,22 @@ fun MainScreenLook(navController: NavController) {
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
+                .padding(50.dp)
                 .align(Alignment.Center),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+            verticalArrangement = Arrangement.spacedBy(56.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             item {
-                Buttons(navController, R.drawable.dolinakoscieliska, "Tatry Wysokie", "TatryWysokie")
+                Buttons(navController, R.drawable.koscielec, "Tatry Wysokie", "TatryWysokie")
             }
             item {
-                Buttons(navController, R.drawable.koscielec, "Tatry Zachodnie", "TatryZachodnie")
+                Buttons(navController, R.drawable.giewont, "Tatry Zachodnie", "TatryZachodnie")
             }
             item {
-                Buttons(navController, R.drawable.dolinabialego, "Doliny i przełęcze", "Doliny")
+                Buttons(navController, R.drawable.dolinakoscieliska, "Doliny i przełęcze", "Doliny")
             }
             item {
-                Buttons(navController, R.drawable.rohacze, "Ulubione", "Ulubione")
+                Buttons(navController, R.drawable.halagasienicowa, "Ulubione", "Ulubione")
             }
         }
     }
@@ -78,7 +78,7 @@ fun Buttons(navController: NavController, imageId: Int, opis: String, destinatio
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(100.dp)
+            .height(130.dp)
             .clickable
 
             {
@@ -112,7 +112,7 @@ fun Buttons(navController: NavController, imageId: Int, opis: String, destinatio
                     opis,
                     color = Color.White,
                     textAlign = TextAlign.Center,
-                    fontSize = 26.sp,
+                    fontSize = 20.sp,
                     modifier = Modifier.padding(5.dp)
                 )
             }
