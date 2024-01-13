@@ -1,4 +1,4 @@
-package com.example.tatryapp
+package com.example.tatryapp.Navigation
 
 sealed class Screen(val route: String) {
     object MainScreen : Screen("main_screen")

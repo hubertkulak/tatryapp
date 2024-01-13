@@ -15,7 +15,8 @@ object DataProvider {
             latitude = 49.1534,
             longitude = 20.0436,
             elevation = "1489 m",
-            route = "Toporowa Cyrhla – Gęsią Szyja"
+            route = "Toporowa Cyrhla – Gęsią Szyja",
+            type = "Wysokie"
     )
 
     val mountainList = listOf(
@@ -32,7 +33,8 @@ object DataProvider {
             latitude = 49.1316,
             longitude = 20.0148,
             elevation = "1313 m",
-            route = "Kuźnice – Hala Gąsienicowa – Murowaniec – Czarny Staw Gąsienicowy – Zmarzły Staw – Kozia Dolinka – Żleb Kulczyńskiego"
+            route = "Kuźnice – Hala Gąsienicowa – Murowaniec – Czarny Staw Gąsienicowy – Zmarzły Staw – Kozia Dolinka – Żleb Kulczyńskiego" ,
+            type = "Wysokie"
         ),
         Mountains(
             id = 3,
@@ -45,7 +47,8 @@ object DataProvider {
             latitude = 49.1305,
             longitude = 20.0142,
             elevation = "1528 m",
-            route = "Palenica Białczańska – Wodogrzmoty Mickiewicza – Dolina Roztoki – Schronisko PTTK w Dolinie Pięciu Stawów Polskich – Kozi Wierch"
+            route = "Palenica Białczańska – Wodogrzmoty Mickiewicza – Dolina Roztoki – Schronisko PTTK w Dolinie Pięciu Stawów Polskich – Kozi Wierch",
+            type = "Wysokie"
         ),
         Mountains(
             id = 4,
@@ -58,7 +61,8 @@ object DataProvider {
             latitude = 49.1339,
             longitude = 20.0026,
             elevation = "798 m",
-            route = "Kuźnice – Boczań – Przełęcz między Kopami (Karczmisko) – Betlejemka – Schronisko PTTK Murowaniec – Czarny Staw Gąsienicowy – Dolina Jaworzynki – Kuźnice"
+            route = "Kuźnice – Boczań – Przełęcz między Kopami (Karczmisko) – Betlejemka – Schronisko PTTK Murowaniec – Czarny Staw Gąsienicowy – Dolina Jaworzynki – Kuźnice",
+            type = "Wysokie"
         ),
         Mountains(
             id = 5,
@@ -71,7 +75,8 @@ object DataProvider {
             latitude = 49.1045,
             longitude = 20.0518,
             elevation = "1844 m",
-            route = "Palenica Białczańska – Morskie Oko – Czarny Staw – Bula pod Rysami – Rysy i powrót do Palenicy Białczańskiej"
+            route = "Palenica Białczańska – Morskie Oko – Czarny Staw – Bula pod Rysami – Rysy i powrót do Palenicy Białczańskiej",
+            type = "Wysokie"
         ),
 
         Mountains(
@@ -85,7 +90,8 @@ object DataProvider {
             latitude = 49.1150,
             longitude = 20.0224,
             elevation = "1453 m",
-            route = "Palenica Białczańska – Wodogrzmoty Mickiewicza – Dolina Roztoki – Siklawa – Dolina Pięciu Stawów Polskich – Szpiglasowa Przełęcz – Szpiglasowy Wierch – Morskie Oko – Droga Oswalda Balzera – Palenica Białczańska"
+            route = "Palenica Białczańska – Wodogrzmoty Mickiewicza – Dolina Roztoki – Siklawa – Dolina Pięciu Stawów Polskich – Szpiglasowa Przełęcz – Szpiglasowy Wierch – Morskie Oko – Droga Oswalda Balzera – Palenica Białczańska",
+            type = "Wysokie"
         ),
         Mountains(
             id = 7,
@@ -98,7 +104,8 @@ object DataProvider {
             latitude = 49.1331,
             longitude = 20.0052,
             elevation = "1374 m",
-            route = "Kuźnice – Boczań – Przełęcz między Kopami – Schronisko PTTK Murowaniec – Czarny Staw Gąsienicowy – Karb – Kościelec – Karb – Zielony Staw Gąsienicowy – Pod Murowańcem – Karczmisko – Dolina Jaworzynka"
+            route = "Kuźnice – Boczań – Przełęcz między Kopami – Schronisko PTTK Murowaniec – Czarny Staw Gąsienicowy – Karb – Kościelec – Karb – Zielony Staw Gąsienicowy – Pod Murowańcem – Karczmisko – Dolina Jaworzynka",
+            type = "Wysokie"
         ),
     )
 
@@ -116,7 +123,8 @@ object DataProvider {
             latitude = 49.1552,
             longitude = 19.5629,
             elevation = "614 m",
-            route = "Dolina Białego – Czerwona Przełęcz – Sarnia Skała – Czerwona Przełęcz – Siklawica – Dolina Strążyska"
+            route = "Dolina Białego – Czerwona Przełęcz – Sarnia Skała – Czerwona Przełęcz – Siklawica – Dolina Strążyska",
+            type = "Zachodnie"
         )
 
     val mountainListZach = listOf(
@@ -132,7 +140,8 @@ object DataProvider {
             latitude = 49.1351,
             longitude = 19.5411,
             elevation = "1487 m",
-            route = "Kiry - Ciemniak - Małołączniak - Kondracka Kopa - Kiry"
+            route = "Kiry - Ciemniak - Małołączniak - Kondracka Kopa - Kiry",
+            type = "Zachodnie"
         ),
         Mountains(
             id = 3,
@@ -145,7 +154,8 @@ object DataProvider {
             latitude = 49.1157,
             longitude = 19.4911,
             elevation = " 1675 m ",
-            route = "Kiry - Schronisko PTTK na Hali Ornak -Starorobociański Wierch -Siwa Polana - Dolina Chochołowska"
+            route = "Kiry - Schronisko PTTK na Hali Ornak -Starorobociański Wierch -Siwa Polana - Dolina Chochołowska",
+            type = "Zachodnie"
         ),
         Mountains(
             id = 4,
@@ -158,7 +168,8 @@ object DataProvider {
             latitude = 49.1635,
             longitude = 19.5922,
             elevation = "309 m",
-            route = "Murowanica – Kuźnicka Polana – Nosal – Przełęcz Nosalowa – Kuźnicka Polana"
+            route = "Murowanica – Kuźnicka Polana – Nosal – Przełęcz Nosalowa – Kuźnicka Polana",
+            type = "Zachodnie"
         ),
         Mountains(
             id = 5,
@@ -171,7 +182,8 @@ object DataProvider {
             latitude = 49.1503,
             longitude = 19.5602,
             elevation = "909 m",
-            route = "Kuźnice – Kalatówki – Hala Kondratowa – Kondracka Przełęcz – Wyżnia Kondracka Przełęcz – Giewont"
+            route = "Kuźnice – Kalatówki – Hala Kondratowa – Kondracka Przełęcz – Wyżnia Kondracka Przełęcz – Giewont",
+            type = "Zachodnie"
         ),
         Mountains(
             id = 6,
@@ -184,7 +196,8 @@ object DataProvider {
             latitude = 49.1150,
             longitude = 19.4453,
             elevation = "1458 m",
-            route = "Tatliakova Chata - Rakoń– Wołowiec - Rohacze"
+            route = "Tatliakova Chata - Rakoń– Wołowiec - Rohacze",
+            type = "Zachodnie"
         ),
         Mountains(
             id = 7,
@@ -197,7 +210,8 @@ object DataProvider {
             latitude = 49.1503,
             longitude = 19.5602,
             elevation = "230 m",
-            route = "Dolina Strążyska - Polana Strążyska - Siklawica"
+            route = "Dolina Strążyska - Polana Strążyska - Siklawica",
+            type = "Zachodnie"
         ),
 
     )
@@ -214,7 +228,8 @@ object DataProvider {
             latitude = 49.1613,
             longitude = 19.5557,
             elevation = "194 m",
-            route = "Polana Strążyska - Dolina Strążyska"
+            route = "Polana Strążyska - Dolina Strążyska",
+            type = "Doliny"
         )
 
     val mountainListDoliny = listOf(
@@ -230,7 +245,8 @@ object DataProvider {
             latitude = 49.1532,
             longitude = 19.5418,
             elevation = "238 m",
-            route = "Gronik - Dolina Małej Łąki"
+            route = "Gronik - Dolina Małej Łąki",
+            type = "Doliny"
         ),
         Mountains(
             id = 3,
@@ -246,7 +262,8 @@ object DataProvider {
             latitude = 49.1613,
             longitude = 19.5720,
             elevation = "150 m",
-            route = "- Dolina Białego"
+            route = "- Dolina Białego",
+            type = "Doliny"
         ),
         Mountains(
             id = 4,
@@ -259,7 +276,8 @@ object DataProvider {
             latitude = 49.1234,
             longitude = 20.0212,
             elevation = "803 m",
-            route = "Palenica Białczańska – Wodogrzmoty Mickiewicza – Dolina Roztoki – Siklawa – Schronisko PTTK w Dolinie Pięciu Stawów Polskich"
+            route = "Palenica Białczańska – Wodogrzmoty Mickiewicza – Dolina Roztoki – Siklawa – Schronisko PTTK w Dolinie Pięciu Stawów Polskich",
+            type = "Doliny"
         ),
         Mountains(
             id = 5,
@@ -272,7 +290,8 @@ object DataProvider {
             latitude = 49.1440,
             longitude = 19.4842,
             elevation = "1489m",
-            route = "Siwa Polana - Polana Chochołowska - Schronisko PTTK na Polanie Chochołowskiej"
+            route = "Siwa Polana - Polana Chochołowska - Schronisko PTTK na Polanie Chochołowskiej",
+            type = "Doliny"
         ),
         Mountains(
             id = 6,
@@ -285,7 +304,9 @@ object DataProvider {
             latitude = 49.1514,
             longitude = 19.5200,
             elevation = "267 m",
-            route = "Cudakowa Polana - Polana Pisana - Dolina Kościeliska - szlak do Mylnej Jaskini"
+            route = "Cudakowa Polana - Polana Pisana - Dolina Kościeliska - szlak do Mylnej Jaskini",
+            type = "Doliny",
+
         ),
         Mountains(
             id = 7,
@@ -298,7 +319,8 @@ object DataProvider {
             latitude = 49.1423,
             longitude = 19.5144,
             elevation = "75 m",
-            route = " Mylna Dolina - Jaskinia Raptawicka"
+            route = " Mylna Dolina - Jaskinia Raptawicka",
+            type = "Doliny"
         ),
     )
 }

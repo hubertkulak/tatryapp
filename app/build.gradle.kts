@@ -1,6 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
+    id ("com.google.dagger.hilt.android")
+
+
 }
 
 android {
@@ -89,10 +93,25 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    implementation("androidx.room:room-common:2.6.1")
-    annotationProcessor ("androidx.room:room-compiler:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    implementation("androidx.compose.runtime:runtime:1.5.4")
+
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+
+    //Dagger Hilt
+    implementation ("com.google.dagger:hilt-android:2.44")
+    annotationProcessor("com.google.dagger:hilt-compiler:2.44")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+
+    val room_version = "2.6.0"
+    implementation ("androidx.room:room-runtime:$room_version")
+    implementation ("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+
+    // ViewModel
+    implementation( "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0")
+    implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
+
+
 
 }

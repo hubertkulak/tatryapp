@@ -1,4 +1,4 @@
-package com.example.tatryapp
+package com.example.tatryapp.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,6 +18,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -43,23 +44,31 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.tatryapp.FavViewModel
+import com.example.tatryapp.R
 import com.example.tatryapp.data.DataProvider
 import com.example.tatryapp.data.Mountains
+import com.example.tatryapp.data.addmountain
 import com.example.tatryapp.weather.WeatherForecastScreen
 
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int) {
+fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int,viewModel: FavViewModel) {
     val mountain = DataProvider.mountainListZach.firstOrNull { it.id == mountainZachId }
     val scrollState = rememberScrollState()
+
+    val mountainId = mountain?.id ?: -1 // Pobranie ID góry lub -1, jeśli obiekt jest nullem
+    val type = mountain?.type ?: "null"
+
+    val isFavorite = remember {
+        mutableStateOf(if (mountainId != -1) viewModel.isMountainFavorite(mountainId, type) else false)
+    }
 
     if (mountain != null) {
 
         val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
-
-
 
 
         Scaffold(
@@ -91,9 +100,19 @@ fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int) 
                     actions = {
                         IconButton(onClick = {
 
+                            if (isFavorite.value) {
+                                viewModel.deleteMountains(mountain)
+                                isFavorite.value = false
+                            } else {
+                                addmountain(mountain, viewModel)
+                                isFavorite.value = true
+                            }
+
+
+
                         }) {
                             Icon(
-                                imageVector = Icons.Filled.Favorite,
+                                imageVector = if (isFavorite.value) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
                                 contentDescription = "Localized description",
                                 tint = Color.Red,
                             )
@@ -129,6 +148,7 @@ fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int) 
                                 latitude = mountain.latitude,
                                 longitude = mountain.longitude
                             )
+
                         }
                     }
                 }
@@ -140,96 +160,6 @@ fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int) 
 }
 
 
-@Composable
-fun ProfileHeader(
-    mountain : Mountains,
-    containerHeight: Dp
-) {
-    Image(
-        modifier = Modifier
-            .heightIn(max = containerHeight / 2)
-            .fillMaxWidth()
-            .padding(top = 80.dp),
-        painter = painterResource(id = mountain.mountainImageId),
-        contentScale = ContentScale.Crop,
-        contentDescription = null
-    )
-}
 
 
-@Composable
-fun Description (mountain : Mountains, containerHeight: Dp)
-{
-    Column(modifier = Modifier.padding(16.dp)) {
-        Text(
-            text = mountain.description,
-            style = MaterialTheme.typography.bodyMedium,
-            color = Color.White
-        )
-    }
-}
-@Composable
-fun ProfileContent(mountain: Mountains, containerHeight: Dp) {
-    Column {
-       // Title(mountain)
-        Spacer(modifier = Modifier.height(8.dp))
-        Row (modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp)
-            .padding(top = 8.dp, bottom = 16.dp)
-        ){
-
-            ProfileProperty(label = stringResource(id = R.string.time), value = mountain.time)
-            Spacer(modifier = Modifier.width(26.dp))
-            ProfileProperty(label = stringResource(id = R.string.distance), value = mountain.distance)
-            Spacer(modifier = Modifier.width(26.dp))
-            ProfileProperty(label = stringResource(id = R.string.elevation), value = mountain.elevation)
-        }
-        Divider(modifier = Modifier.padding(bottom = 16.dp))
-        Spacer(modifier = Modifier.padding(bottom = 16.dp))
-        ProfileProperty(label = stringResource(id = R.string.route), value = mountain.route)
-        Spacer(modifier = Modifier.height(32.dp))
-        Spacer(modifier = Modifier.height(20.dp))
-    }
-}
-
-@Composable
-private fun Title(mountain: Mountains)
-{
-    Column(modifier = Modifier.padding(16.dp)) {
-        Text(
-            text = mountain.name,
-            style = MaterialTheme.typography.displayMedium,
-            fontWeight = FontWeight.Bold,
-            color = Color.White
-        )
-        Divider(modifier = Modifier.padding(top = 12.dp))
-    }
-}
-
-
-@Composable
-fun ProfileProperty(label: String, value: String) {
-    Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp)) {
-        // Divider(modifier = Modifier.padding(bottom = 4.dp))
-        Text(
-            text = label,
-            modifier = Modifier.height(24.dp),
-            style = MaterialTheme.typography.titleMedium,
-            color = Color.White
-        )
-        Text(
-            text = value,
-            modifier = Modifier.height(24.dp),
-            style = MaterialTheme.typography.bodyMedium,
-            color = Color.White,
-            overflow = TextOverflow.Visible
-        )
-    }
-}
-
-@Composable
-fun ScrollContent(innerPadding: PaddingValues) {
-
-}
 
