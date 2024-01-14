@@ -2,6 +2,7 @@ package com.example.tatryapp.Navigation
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -16,10 +17,12 @@ import com.example.tatryapp.presentation.MountainDetailScreenZach
 import com.example.tatryapp.presentation.TatryWysokieLook
 import com.example.tatryapp.presentation.TatryZachodnieLook
 import com.example.tatryapp.presentation.UlubioneLook
+import com.example.tatryapp.presentation.ZdobyteLook
+
 
 @Composable
-fun Navigation(viewModel: FavViewModel){
-    val navController = rememberNavController()
+fun Navigation(viewModel: FavViewModel, navController: NavHostController){
+    //val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.MainScreen.route ){
         composable(route = Screen.MainScreen.route){
             MainScreenLook(navController = navController)
@@ -39,7 +42,7 @@ fun Navigation(viewModel: FavViewModel){
             UlubioneLook(navController = navController, viewModel = viewModel)
         }
         composable(route = Screen.Zdobyte.route){
-            ZdobyteLook(navController = navController)
+            ZdobyteLook(navController = navController, viewModel = viewModel)
         }
 
         composable(

@@ -42,7 +42,7 @@ import com.example.tatryapp.data.Mountains
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun UlubioneLook(navController: NavController, viewModel: FavViewModel)
+fun ZdobyteLook(navController: NavController, viewModel: FavViewModel)
 {
     val mountainsList = remember { viewModel.getAllMountains()}
 
@@ -61,7 +61,7 @@ fun UlubioneLook(navController: NavController, viewModel: FavViewModel)
                 ),
                 title = {
                     Text(
-                        "Ulubione",
+                        "Zdobyte",
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -74,61 +74,9 @@ fun UlubioneLook(navController: NavController, viewModel: FavViewModel)
         ScrollContent(innerPadding)
         Column(modifier = Modifier.background(color = Color.Black).fillMaxHeight().fillMaxWidth()) {
 
-        LazyColumn(
-            modifier = Modifier
-                .background(color = Color.Black)
-                .padding(top = 65.dp),
-            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
-        ) {
-
-            items(
-                items = mountainsList,
-                itemContent = { mountain ->
-                    MountainListItemFav(
-                        mountains = mountain,
-                        onClick = { selectedMountain ->
-                            val route = when (selectedMountain.type) {
-                                "Doliny" -> "mountainDetailDoliny/${selectedMountain.id}"
-                                "Wysokie" -> "mountainDetail/${selectedMountain.id}"
-                                "Zachodnie" -> "mountainDetailZach/${selectedMountain.id}"
-                                else -> "mountainDetail/${selectedMountain.id}" // domyślna wartość
-                            }
-                            navController.navigate(route)
-                        }
-                    )
-                }
-            )
-        }
     }
     }
-
-
 
 }
 
-
-@Composable
-fun MountainListItemFav(mountains: Mountains, onClick: (Mountains) -> Unit){
-    Card (
-        modifier = Modifier
-            .padding(horizontal = 8.dp, vertical = 8.dp)
-            .fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = Color.White),
-        shape = RoundedCornerShape(corner = CornerSize(16.dp))
-    ) {
-        Row{
-            MountainImage(mountains)
-            Column (
-                modifier = Modifier
-                    .clickable { onClick(mountains) }
-                    .padding(16.dp)
-                    .fillMaxWidth()
-                    .align(Alignment.CenterVertically)
-            ){
-                Text(text = mountains.name, style = MaterialTheme.typography.bodyLarge)
-                Text(text = "VIEW DETAIL", style = MaterialTheme.typography.bodyMedium)
-            }
-        }
-    }
-}
 
