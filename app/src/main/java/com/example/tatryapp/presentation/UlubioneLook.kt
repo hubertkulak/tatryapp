@@ -28,6 +28,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -44,7 +46,7 @@ import com.example.tatryapp.data.Mountains
 @Composable
 fun UlubioneLook(navController: NavController, viewModel: FavViewModel)
 {
-    val mountainsList = remember { viewModel.getAllMountains()}
+    val mountainsList by viewModel.getAllMountains().collectAsState(initial = emptyList())
 
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
@@ -72,7 +74,10 @@ fun UlubioneLook(navController: NavController, viewModel: FavViewModel)
         },
     ) { innerPadding ->
         ScrollContent(innerPadding)
-        Column(modifier = Modifier.background(color = Color.Black).fillMaxHeight().fillMaxWidth()) {
+        Column(modifier = Modifier
+            .background(color = Color.Black)
+            .fillMaxHeight()
+            .fillMaxWidth()) {
 
         LazyColumn(
             modifier = Modifier
@@ -126,7 +131,7 @@ fun MountainListItemFav(mountains: Mountains, onClick: (Mountains) -> Unit){
                     .align(Alignment.CenterVertically)
             ){
                 Text(text = mountains.name, style = MaterialTheme.typography.bodyLarge)
-                Text(text = "VIEW DETAIL", style = MaterialTheme.typography.bodyMedium)
+                Text(text = "Dowiedz się więcej", style = MaterialTheme.typography.bodyMedium)
             }
         }
     }

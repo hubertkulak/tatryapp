@@ -34,3 +34,24 @@ fun RatingBar(
         }
     }
 }
+
+@Composable
+fun RatingBarDisplay(
+    maxRating: Int = 5,
+    currentRating: Int,
+    starsColor: Color = Color.Yellow
+){
+    Row {
+        for (i in 1..maxRating) {
+            Icon(
+                imageVector = if (i <= currentRating) Icons.Filled.Star
+                else Icons.Filled.StarOutline,
+                contentDescription = null,
+                tint = if (i <= currentRating) starsColor
+                else Color.Unspecified,
+                modifier = Modifier
+                    .padding(4.dp)
+            )
+        }
+    }
+}

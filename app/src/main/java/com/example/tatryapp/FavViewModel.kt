@@ -14,7 +14,7 @@ class FavViewModel(
     private val dao: FavDao
 ) : ViewModel() {
 
-    fun getAllMountains(): List<Mountains> {
+    fun getAllMountains(): Flow<List<Mountains>> {
         return dao.getNotesOrderdByTitle()
     }
 
@@ -36,7 +36,7 @@ class FavViewModel(
         return mountain != null // Zwróć true, jeśli góra jest w bazie danych (jest ulubiona), w przeciwnym razie false
     }
 
-    fun getAllMountainsChecked(): List<MountainsChecked> {
+    fun getAllMountainsChecked(): Flow<List<MountainsChecked>> {
         return dao.getCheckedOrderdByTitle()
     }
 

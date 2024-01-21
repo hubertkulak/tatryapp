@@ -90,7 +90,7 @@ object DataProvider {
             latitude = 49.1150,
             longitude = 20.0224,
             elevation = "1453 m",
-            route = "Palenica Białczańska – Wodogrzmoty Mickiewicza – Dolina Roztoki – Siklawa – Dolina Pięciu Stawów Polskich – Szpiglasowa Przełęcz – Szpiglasowy Wierch – Morskie Oko – Droga Oswalda Balzera – Palenica Białczańska",
+            route = "Palenica Białczańska – Wodogrzmoty Mickiewicza – Dolina Roztoki –  Dolina Pięciu Stawów – Szpiglasowa Przełęcz – Szpiglasowy Wierch – Morskie Oko – Droga Oswalda Balzera – Palenica Białczańska",
             type = "Wysokie"
         ),
         Mountains(
@@ -104,7 +104,7 @@ object DataProvider {
             latitude = 49.1331,
             longitude = 20.0052,
             elevation = "1374 m",
-            route = "Kuźnice – Boczań – Przełęcz między Kopami – Schronisko PTTK Murowaniec – Czarny Staw Gąsienicowy – Karb – Kościelec – Karb – Zielony Staw Gąsienicowy – Pod Murowańcem – Karczmisko – Dolina Jaworzynka",
+            route = "Kuźnice – Boczań – Przełęcz między Kopami –  PTTK Murowaniec – Czarny Staw Gąsienicowy – Karb – Kościelec – Karb  – Pod Murowańcem – Karczmisko – Dolina Jaworzynka",
             type = "Wysokie"
         ),
     )

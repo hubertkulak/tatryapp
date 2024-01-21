@@ -22,7 +22,7 @@ interface FavDao {
     suspend fun deleteNote(mountains: Mountains)
 
     @Query("SELECT * FROM mountains")
-    fun getNotesOrderdByTitle(): List<Mountains>
+    fun getNotesOrderdByTitle(): Flow<List<Mountains>>
 
     @Query("SELECT * FROM mountains WHERE id = :mountainId AND type = :type")
     fun getMountainById(mountainId: Int, type: String): Mountains
@@ -38,5 +38,5 @@ interface FavDao {
     fun getMountainCheckById(mountainId: Int, type: String): MountainsChecked
 
     @Query("SELECT * FROM mountainschecked")
-    fun getCheckedOrderdByTitle(): List<MountainsChecked>
+    fun getCheckedOrderdByTitle(): Flow<List<MountainsChecked>>
 }

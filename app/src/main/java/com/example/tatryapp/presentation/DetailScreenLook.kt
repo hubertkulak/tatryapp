@@ -47,6 +47,7 @@ fun Description (mountain : Mountains, containerHeight: Dp)
 {
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
+            modifier = Modifier.padding(top=10.dp),
             text = mountain.description,
             style = MaterialTheme.typography.bodyMedium,
             color = Color.White
@@ -57,11 +58,11 @@ fun Description (mountain : Mountains, containerHeight: Dp)
 fun ProfileContent(mountain: Mountains, containerHeight: Dp) {
     Column {
         // Title(mountain)
-        Spacer(modifier = Modifier.height(8.dp))
+
         Row (modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
-            .padding(top = 8.dp, bottom = 16.dp)
+            .padding(top = 16.dp, bottom = 5.dp)
         ){
 
             ProfileProperty(label = stringResource(id = R.string.time), value = mountain.time)
@@ -70,11 +71,11 @@ fun ProfileContent(mountain: Mountains, containerHeight: Dp) {
             Spacer(modifier = Modifier.width(26.dp))
             ProfileProperty(label = stringResource(id = R.string.elevation), value = mountain.elevation)
         }
-        Divider(modifier = Modifier.padding(bottom = 16.dp))
-        Spacer(modifier = Modifier.padding(bottom = 16.dp))
+        Divider(modifier = Modifier.padding(bottom = 5.dp, end = 16.dp, start = 16.dp))
+        Spacer(modifier = Modifier.padding(bottom = 5.dp))
         ProfileProperty(label = stringResource(id = R.string.route), value = mountain.route)
-        Spacer(modifier = Modifier.height(32.dp))
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
+
     }
 }
 

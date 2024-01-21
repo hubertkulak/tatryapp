@@ -44,6 +44,7 @@ import com.example.tatryapp.weather.WeatherForecastScreen
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int,viewModel: FavViewModel) {
+
     val mountain = DataProvider.mountainListZach.firstOrNull { it.id == mountainZachId }
     val scrollState = rememberScrollState()
 
@@ -51,10 +52,6 @@ fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int,v
     val type = mountain?.type ?: "null"
     val name = mountain?.name ?: "null"
     val mountainimage = mountain?.mountainImageId ?: 0
-
-    val isFavorite = remember {
-        mutableStateOf(if (mountainId != -1) viewModel.isMountainFavorite(mountainId, type) else false)
-    }
 
     val isChecked = remember {
         mutableStateOf(if (mountainId != -1) viewModel.isMountainChecked(mountainId, type) else false)
@@ -65,6 +62,10 @@ fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int,v
     }
      if(dialogOpen){
         DialogWindow(viewModel = viewModel, mountainimage = mountainimage, mountainid = mountainId,type = type, name = name,onDismissRequest = { dialogOpen = false }, onConfirmation = {dialogOpen = false})
+    }
+
+    val isFavorite = remember {
+        mutableStateOf(if (mountainId != -1) viewModel.isMountainFavorite(mountainId, type) else false)
     }
 
     if (mountain != null) {
@@ -118,15 +119,11 @@ fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int,v
                         }
 
                         IconButton(onClick = {
-
-
                             if (isChecked.value) {
                                 Toast.makeText(context, "Już zdobyłeś tą góre!",Toast.LENGTH_SHORT).show()
                             } else {
                                 dialogOpen = true
                             }
-
-
                         }) {
                             Icon(
                                 imageVector = if (isFavorite.value) Icons.Filled.Check else Icons.Outlined.Check,
