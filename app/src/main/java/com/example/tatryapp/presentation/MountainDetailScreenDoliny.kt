@@ -45,13 +45,14 @@ fun MountainDetailScreenDoliny(navController: NavController, mountainDolinyId: I
         mutableStateOf(if (mountainId != -1) viewModel.isMountainFavorite(mountainId, type) else false)
     }
 
+    val isChecked = remember {
+        mutableStateOf(if (mountainId != -1) viewModel.isMountainChecked(mountainId, type) else false)
+    }
+
     if (mountain != null) {
 
 
         val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
-
-
-
 
         Scaffold(
             modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),

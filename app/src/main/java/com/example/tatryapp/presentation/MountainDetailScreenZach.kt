@@ -1,6 +1,7 @@
 package com.example.tatryapp.presentation
 
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -30,6 +31,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.navigation.NavController
 import com.example.tatryapp.FavViewModel
@@ -47,25 +49,29 @@ fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int,v
 
     val mountainId = mountain?.id ?: -1 // Pobranie ID góry lub -1, jeśli obiekt jest nullem
     val type = mountain?.type ?: "null"
+    val name = mountain?.name ?: "null"
+    val mountainimage = mountain?.mountainImageId ?: 0
 
     val isFavorite = remember {
         mutableStateOf(if (mountainId != -1) viewModel.isMountainFavorite(mountainId, type) else false)
     }
 
+    val isChecked = remember {
+        mutableStateOf(if (mountainId != -1) viewModel.isMountainChecked(mountainId, type) else false)
+    }
+
     var dialogOpen by remember {
         mutableStateOf(false)
     }
-
-    if(dialogOpen){
-        DialogWindow(onDismissRequest = { dialogOpen = false }, onConfirmation = {dialogOpen = false})
-
+     if(dialogOpen){
+        DialogWindow(viewModel = viewModel, mountainimage = mountainimage, mountainid = mountainId,type = type, name = name,onDismissRequest = { dialogOpen = false }, onConfirmation = {dialogOpen = false})
     }
 
     if (mountain != null) {
 
         val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
-
+        val context = LocalContext.current
         Scaffold(
             modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
 
@@ -82,6 +88,7 @@ fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int,v
                             overflow = TextOverflow.Ellipsis
                         )
                     },
+
                     navigationIcon = {
                         IconButton(onClick = { navController.popBackStack() }) {
                             Icon(
@@ -111,7 +118,15 @@ fun MountainDetailScreenZach(navController: NavController, mountainZachId: Int,v
                         }
 
                         IconButton(onClick = {
-                            dialogOpen = true
+
+
+                            if (isChecked.value) {
+                                Toast.makeText(context, "Już zdobyłeś tą góre!",Toast.LENGTH_SHORT).show()
+                            } else {
+                                dialogOpen = true
+                            }
+
+
                         }) {
                             Icon(
                                 imageVector = if (isFavorite.value) Icons.Filled.Check else Icons.Outlined.Check,

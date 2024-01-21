@@ -1,5 +1,6 @@
 package com.example.tatryapp.presentation
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CornerSize
@@ -31,20 +33,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.tatryapp.FavViewModel
 import com.example.tatryapp.data.Mountains
+import com.example.tatryapp.data.MountainsChecked
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ZdobyteLook(navController: NavController, viewModel: FavViewModel)
 {
-    val mountainsList = remember { viewModel.getAllMountains()}
+    val mountainsList = remember { viewModel.getAllMountainsChecked()}
 
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
@@ -74,9 +80,60 @@ fun ZdobyteLook(navController: NavController, viewModel: FavViewModel)
         ScrollContent(innerPadding)
         Column(modifier = Modifier.background(color = Color.Black).fillMaxHeight().fillMaxWidth()) {
 
-    }
+            LazyColumn(
+                modifier = Modifier
+                    .background(color = Color.Black)
+                    .padding(top = 65.dp),
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+
+                items(
+                    items = mountainsList,
+                    itemContent = { mountainCheck ->
+                        MountainListItemCheck(
+                            mountainsChecked = mountainCheck,
+                        )
+                    }
+                )
+            }
+        }
     }
 
 }
 
+@Composable
+fun MountainListItemCheck(mountainsChecked: MountainsChecked){
+    Card (
+        modifier = Modifier
+            .padding(horizontal = 8.dp, vertical = 8.dp)
+            .fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        shape = RoundedCornerShape(corner = CornerSize(16.dp))
+    ) {
+        Row{
+            MountainImageCheck(mountainsChecked)
+            Column (
+                modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxWidth()
+                    .align(Alignment.CenterVertically)
+            ){
+                Text(text = mountainsChecked.name, style = MaterialTheme.typography.bodyLarge)
+                Text(text = mountainsChecked.opis, style = MaterialTheme.typography.bodyMedium)
+            }
+        }
+    }
+}
 
+@Composable
+fun MountainImageCheck(mountainsChecked : MountainsChecked) {
+    Image(
+        painter = painterResource(id = mountainsChecked.mountainImageId),
+        contentDescription = null,
+        contentScale = ContentScale.Crop,
+        modifier = Modifier
+            .padding(8.dp)
+            .size(84.dp)
+            .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
+    )
+}

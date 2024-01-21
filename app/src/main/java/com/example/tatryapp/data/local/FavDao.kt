@@ -1,5 +1,6 @@
 package com.example.tatryapp.data.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -36,6 +37,6 @@ interface FavDao {
     @Query("SELECT * FROM mountainschecked WHERE id = :mountainId AND type = :type")
     fun getMountainCheckById(mountainId: Int, type: String): MountainsChecked
 
-    @Query("SELECT * FROM mountains")
+    @Query("SELECT * FROM mountainschecked")
     fun getCheckedOrderdByTitle(): List<MountainsChecked>
 }

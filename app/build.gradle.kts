@@ -113,5 +113,5 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
 
 
-
+    implementation ("androidx.compose.material:material-icons-extended-android:1.5.0-beta02")
 }
