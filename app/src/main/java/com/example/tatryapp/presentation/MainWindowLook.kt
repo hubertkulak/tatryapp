@@ -19,12 +19,19 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,14 +47,18 @@ fun MainScreenLook(navController: NavController) {
             .fillMaxSize()
             .background(color = Color.Black)
     ) {
+        
         LazyColumn(
             modifier = Modifier
-                .padding(50.dp)
+                .padding(start = 50.dp, end = 50.dp, bottom = 50.dp, top = 25.dp)
                 .fillMaxSize()
                 .align(Alignment.Center),
-            verticalArrangement = Arrangement.spacedBy(56.dp),
+            verticalArrangement = Arrangement.spacedBy(21.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            item{
+                Text(color =Color.White ,text = "Rozpocznij przygodę.", fontFamily = fontFamilia, fontSize = 30.sp)
+            }
             item {
                 Buttons(navController, R.drawable.koscielec, "Tatry Wysokie", "TatryWysokie")
             }
@@ -57,6 +68,9 @@ fun MainScreenLook(navController: NavController) {
             item {
                 Buttons(navController, R.drawable.dolinakoscieliska, "Doliny i przełęcze", "Doliny")
             }
+            item {
+                Buttons(navController, R.drawable.dolinakoscieliska, "Informacje GOPR", "GOPR")
+            }
 
         }
     }
@@ -65,6 +79,17 @@ fun MainScreenLook(navController: NavController) {
 
 @Composable
 fun Buttons(navController: NavController, imageId: Int, opis: String, destination: String) {
+
+    var goprSite by remember {
+        mutableStateOf(false)
+    }
+
+    if(goprSite){
+        val uriHandler = LocalUriHandler.current
+        uriHandler.openUri("https://www.gopr.pl/")
+        goprSite = false
+    }
+
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -78,6 +103,7 @@ fun Buttons(navController: NavController, imageId: Int, opis: String, destinatio
                     "Doliny" -> navController.navigate(Screen.Doliny.route)
                     "Ulubione" -> navController.navigate(Screen.Ulubione.route)
                     "Zdobyte" -> navController.navigate(Screen.Zdobyte.route)
+                    "GOPR" -> goprSite = true
                 }
             },
     ) {
@@ -103,10 +129,15 @@ fun Buttons(navController: NavController, imageId: Int, opis: String, destinatio
                     opis,
                     color = Color.White,
                     textAlign = TextAlign.Center,
-                    fontSize = 20.sp,
+                    fontFamily = fontFamilia,
+                    fontSize = 25.sp,
                     modifier = Modifier.padding(5.dp)
                 )
             }
         }
     }
 }
+
+val fontFamilia = FontFamily(
+    Font(R.font.robotolight),
+)
