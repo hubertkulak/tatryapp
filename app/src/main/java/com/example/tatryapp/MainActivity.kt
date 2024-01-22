@@ -72,8 +72,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier
                         )
                     }) { paddingValues ->
-                    ScrollContent(paddingValues)
-                    Box {
+                    Box(modifier = Modifier.padding(paddingValues)) {
                         Navigation(viewModel = viewModel, navController = navController)
                     }
 

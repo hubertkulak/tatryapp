@@ -53,7 +53,7 @@ fun MainScreenLook(navController: NavController) {
         
         LazyColumn(
             modifier = Modifier
-                .padding(start = 50.dp, end = 50.dp, bottom = 50.dp, top = 10.dp)
+                .padding(start = 50.dp, end = 50.dp, bottom = 10.dp, top = 10.dp)
                 .fillMaxSize()
                 .align(Alignment.Center),
             verticalArrangement = Arrangement.spacedBy(21.dp),
