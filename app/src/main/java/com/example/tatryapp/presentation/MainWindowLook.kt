@@ -69,7 +69,7 @@ fun MainScreenLook(navController: NavController) {
                 Buttons(navController, R.drawable.dolinakoscieliska, "Doliny i przełęcze", "Doliny")
             }
             item {
-                Buttons(navController, R.drawable.dolinakoscieliska, "Informacje GOPR", "GOPR")
+                Buttons(navController, R.drawable.dolinakoscieliska, "Informacje GOPR", "GOPRY")
             }
 
         }
