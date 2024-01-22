@@ -6,10 +6,13 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Card
@@ -50,7 +53,7 @@ fun MainScreenLook(navController: NavController) {
         
         LazyColumn(
             modifier = Modifier
-                .padding(start = 50.dp, end = 50.dp, bottom = 50.dp, top = 25.dp)
+                .padding(start = 50.dp, end = 50.dp, bottom = 50.dp, top = 10.dp)
                 .fillMaxSize()
                 .align(Alignment.Center),
             verticalArrangement = Arrangement.spacedBy(21.dp),
@@ -69,9 +72,12 @@ fun MainScreenLook(navController: NavController) {
                 Buttons(navController, R.drawable.dolinakoscieliska, "Doliny i przełęcze", "Doliny")
             }
             item {
-                Buttons(navController, R.drawable.dolinakoscieliska, "Informacje GOPR", "GOPRY")
+                Row {
+                    ButtonInfo(navController, R.drawable.topr, "TOPR", "TOPR")
+                    Spacer(modifier = Modifier.width(28.dp))
+                    ButtonInfo(navController, R.drawable.tpn, "TPN", "TPN")
+                }
             }
-
         }
     }
 }
@@ -79,16 +85,7 @@ fun MainScreenLook(navController: NavController) {
 
 @Composable
 fun Buttons(navController: NavController, imageId: Int, opis: String, destination: String) {
-
-    var goprSite by remember {
-        mutableStateOf(false)
-    }
-
-    if(goprSite){
-        val uriHandler = LocalUriHandler.current
-        uriHandler.openUri("https://www.gopr.pl/")
-        goprSite = false
-    }
+    
 
     Card(
         modifier = Modifier
@@ -103,7 +100,6 @@ fun Buttons(navController: NavController, imageId: Int, opis: String, destinatio
                     "Doliny" -> navController.navigate(Screen.Doliny.route)
                     "Ulubione" -> navController.navigate(Screen.Ulubione.route)
                     "Zdobyte" -> navController.navigate(Screen.Zdobyte.route)
-                    "GOPR" -> goprSite = true
                 }
             },
     ) {
@@ -138,6 +134,57 @@ fun Buttons(navController: NavController, imageId: Int, opis: String, destinatio
     }
 }
 
+@Composable
+fun ButtonInfo(navController: NavController, imageId: Int, opis: String, destination: String) {
+
+    var goprSite by remember {
+        mutableStateOf(false)
+    }
+
+    if (goprSite) {
+        val uriHandler = LocalUriHandler.current
+        uriHandler.openUri("https://www.gopr.pl/")
+        goprSite = false
+    }
+
+    var toprSite by remember {
+        mutableStateOf(false)
+    }
+
+    if (toprSite) {
+        val uriHandler = LocalUriHandler.current
+        uriHandler.openUri("https://tpn.pl/")
+        toprSite = false
+    }
+
+    Card(
+        modifier = Modifier
+            .width(130.dp)
+            .height(130.dp)
+            .clickable
+
+            {
+                when (destination) {
+                    "TOPR" -> goprSite = true
+                    "TPN" -> toprSite = true
+                }
+            }
+    ) {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center,
+        ) {
+            Image(
+                painter = painterResource(id = imageId),
+                contentDescription = "Background Image",
+                contentScale = ContentScale.Crop,
+
+                modifier = Modifier
+                    .fillMaxSize()
+            )
+        }
+    }
+}
 val fontFamilia = FontFamily(
     Font(R.font.robotolight),
 )

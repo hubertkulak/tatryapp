@@ -22,6 +22,7 @@ import com.example.tatryapp.data.local.FavDatabase
 import com.example.tatryapp.presentation.BottomBar
 import com.example.tatryapp.ui.theme.TatryappTheme
 import androidx.compose.ui.Modifier
+import com.example.tatryapp.presentation.ScrollContent
 
 
 class MainActivity : ComponentActivity() {
@@ -71,9 +72,8 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier
                         )
                     }) { paddingValues ->
-                    Box(
-                        modifier = Modifier.padding(paddingValues)
-                    ) {
+                    ScrollContent(paddingValues)
+                    Box {
                         Navigation(viewModel = viewModel, navController = navController)
                     }
 
