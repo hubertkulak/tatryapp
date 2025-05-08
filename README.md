@@ -23,5 +23,5 @@ The project is developed in **Kotlin** using **Jetpack Compose**.
 - Room (local database)
 - REST API (weather)
 
-
+![Demo](Screen_Recording_20250507_190112_tatryapponline-video-cutter.com-ezgif.com-optimize.gif)
 
